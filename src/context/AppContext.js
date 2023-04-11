@@ -23,7 +23,7 @@ export const AppReducer = (state, action) => {
           ...state,
         };
       } else {
-        alert('Cannot increase the allocation! Out of funds');
+        alert('Виберіть розділ витрат та введіть суму для зміни');
         return {
           ...state,
         };

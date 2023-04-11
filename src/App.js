@@ -7,10 +7,9 @@ import Budget from './components/Budget';
 import Remaining from './components/Remaining';
 import ExpenseTotal from './components/ExpenseTotal';
 import ExpenseList from './components/ExpenseList';
-
-// Add code to import the other components here under
-
+import AllocationForm from './components/AllocationForm';
 import { AppProvider } from './context/AppContext';
+
 const App = () => {
   return (
     <AppProvider>
@@ -26,11 +25,13 @@ const App = () => {
           <div className="col-sm">
             <ExpenseTotal />
           </div>
-    <ExpenseList/>
-
-              {/* Add ExpenseList component here under */}   {' '}
-          {/* Add ExpenseItem component here under */}   {' '}
-          {/* Add AllocationForm component here under */}
+          <ExpenseList />
+        </div>
+        <h3>Змінити витрати</h3>
+        <div className="row mt-3">
+          <div className="col-sm">
+            <AllocationForm />
+          </div>
         </div>
       </div>
     </AppProvider>
