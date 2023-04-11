@@ -1,0 +1,22 @@
+.expenseItem{
+    user-select: none;
+}
+.expenseItem td:nth-child(2),
+.expenseItem td:nth-child(3),
+.expenseItem td:nth-child(4){
+    text-align: center;
+}
+
+.addCostIcon{
+    font-size: 27px;
+    cursor: pointer;
+}
+.deleteCostIcon{
+    font-size: 35px;
+    color: red;
+    cursor: pointer;
+}
+.addCostIcon:hover,
+.deleteCostIcon:hover{
+   transform: scale(1.15);
+}
