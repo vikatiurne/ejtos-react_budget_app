@@ -15,6 +15,7 @@ function ExpenseList() {
           <th scope="col">Розділ</th>
           <th scope="col">Запланована витрата</th>
           <th scope="col">Збільшити на 10</th>
+          <th scope="col">Зменшити на 10</th>
           <th scope="col">Онулити</th>
         </tr>
       </thead>

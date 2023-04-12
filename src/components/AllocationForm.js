@@ -2,7 +2,7 @@ import { useContext, useState } from 'react';
 import { AppContext } from '../context/AppContext';
 
 function AllocationForm() {
-  const { dispatch, remaining } = useContext(AppContext);
+  const { dispatch, remaining, currency } = useContext(AppContext);
 
   const [name, setName] = useState('');
   const [action, setAction] = useState('');
@@ -40,12 +40,15 @@ function AllocationForm() {
             style={{
               marginBottom: '0.7em',
               marginRight: '0.5em',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
             }}
           >
             <label className="input-group-text" htmlFor="inputGroupSelect01">
               Розділ
             </label>
-          </div>
+         
           <select
             style={{
               marginBottom: '0.7em',
@@ -72,54 +75,61 @@ function AllocationForm() {
               IT
             </option>
           </select>
+          </div>
           <div
             className="input-group-prepend"
             style={{
               marginBottom: '0.7em',
               marginRight: '0.5em',
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'flex-start',
             }}
           >
             <label className="input-group-text" htmlFor="inputGroupSelect02">
               Витрати
             </label>
-          </div>
-          <select
-            style={{
-              marginBottom: '0.7em',
-              marginRight: '1em',
-            }}
-            className="custom-select"
-            id="inputGroupSelect02"
-            onClick={(e) => setAction(e.target.value)}
-          >
-            <option defaultValue="Add" name="Add">
-              Збільшити
-            </option>
-            <option value="Reduce" name="Reduce">
-              Зменшити
-            </option>
-          </select>
 
-          <input
-            style={{
-              marginBottom: '0.7em',
-              marginRight: '0.5em',
-            }}
-            type="number"
-            value={cost}
-            required="required"
-            id="cost"
-            onChange={(e) => setCost(e.target.value)}
-          />
-          <button
-            className="btn btn-primary"
-            onClick={submitEvent}
-            style={{
-              marginBottom: '0.7em',
-            }}
-          >
-            Застосувати
-          </button>
+            <select
+              style={{
+                marginBottom: '0.7em',
+                marginRight: '1em',
+              }}
+              className="custom-select"
+              id="inputGroupSelect02"
+              onClick={(e) => setAction(e.target.value)}
+            >
+              <option defaultValue="Add" name="Add">
+                Збільшити
+              </option>
+              <option value="Reduce" name="Reduce">
+                Зменшити
+              </option>
+            </select>
+          </div>
+          <div>
+            <span style={{ marginRight: '5px' }}>{currency}</span>
+            <input
+              style={{
+                marginBottom: '0.7em',
+                marginRight: '0.5em',
+              }}
+              type="number"
+              value={cost}
+              required="required"
+              id="cost"
+              onChange={(e) => setCost(e.target.value)}
+            />
+            <button
+              className="btn btn-primary"
+              onClick={submitEvent}
+              style={{
+                marginBottom: '0.7em',
+              }}
+            >
+              Застосувати
+            </button>
+          </div>
         </div>
       </div>
     </div>
