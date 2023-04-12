@@ -25,7 +25,7 @@ function Currency() {
 
   return (
     <div className={`alert ${styles.currency}`}>
-      <label htmlFor="s1">Currency:</label>
+      <label htmlFor="s1">Валюта:</label>
       <select onChange={onclickEvent} id="s1">
         <option label={currencyName} hidden></option>
         {currencyArr.map((curr) => {

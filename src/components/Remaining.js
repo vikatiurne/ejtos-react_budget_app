@@ -4,7 +4,7 @@ import { useContext } from 'react';
 import { AppContext } from '../context/AppContext';
 
 function Remaining() {
-  const { expenses, budget, currency} = useContext(AppContext);
+  const { expenses, budget, currency } = useContext(AppContext);
   const totalExpenses = expenses.reduce(
     (sum, expense) => sum + expense.cost,
     0
@@ -13,8 +13,12 @@ function Remaining() {
     totalExpenses > budget ? 'alert-danger' : 'alert-success';
   return (
     <div className={`alert ${styleRamainder}`}>
-      <span>Залишок: {currency}{budget - totalExpenses}</span>
+      <span>
+        {totalExpenses < budget
+          ? `Залишок: ${currency}${budget - totalExpenses}`
+          : `Дефіцит бюджету: ${currency}${totalExpenses - budget}`}
+      </span>
     </div>
   );
 }
-export default Remaining
+export default Remaining;
